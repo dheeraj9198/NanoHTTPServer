@@ -248,7 +248,6 @@ public abstract class NanoHTTPD {
      * @param headers Header entries, percent decoded
      * @return HTTP response, see class Response for details
      */
-    @Deprecated
     public Response serve(String uri, Method method, Map<String, String> headers, Map<String, String> parms,
                                    Map<String, String> files) {
         return new Response(Status.NOT_FOUND, MIME_PLAINTEXT, "Not Found");

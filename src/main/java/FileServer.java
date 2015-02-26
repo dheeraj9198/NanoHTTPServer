@@ -48,14 +48,15 @@ public class FileServer extends NanoHTTPD {
     public Response serve(String uri, Method method,
                           Map<String, String> header, Map<String, String> parameters,
                           Map<String, String> files) {
+        System.out.println(uri);
         InputStream fis = null;
 
         try {
-            fis = new Mystream("/home/dheeraj/dash-junk/manifest1E.mpd");
+            fis = new Mystream("/home/dheeraj/dash-junk/manifestE.mpd");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        return new NanoHTTPD.Response(Status.OK, "application/xml", fis);
+        return new NanoHTTPD.Response(Status.OK, "application/dash-xml", fis);
     }
 
     public static void main(String[] args) {
